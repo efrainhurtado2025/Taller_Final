@@ -1,0 +1,20 @@
+<form [formGroup]="listarForm" (ngSubmit)="onSubmit()" class="form">
+  <div class="form-row">
+    <mat-form-field appearance="outline" class="year-field">
+      <mat-label>Año</mat-label>
+      <input matInput type="number" formControlName="año" placeholder="Ej: 2024">
+      <mat-error *ngIf="listarForm.get('año')?.hasError('required')">
+        El año es requerido
+      </mat-error>
+      <mat-error *ngIf="listarForm.get('año')?.hasError('min') || listarForm.get('año')?.hasError('max')">
+        Ingrese un año válido (1900-2100)
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="button-container">
+    <button mat-raised-button color="accent" type="submit" [disabled]="listarForm.invalid" class="action-button">
+      <mat-icon>list</mat-icon>
+      Obtener festivos
+    </button>
+  </div>
+</form>

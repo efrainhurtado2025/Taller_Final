@@ -1,0 +1,104 @@
+<app-navbar></app-navbar>
+<div class="main-container">
+  <mat-card class="section-card">
+    <mat-card-header>
+      <mat-card-title class="section-title">
+        <mat-icon>event</mat-icon>
+        Verificar si una fecha es festivo
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <app-verificar-festivo (verificar)="verificarFecha($event)"></app-verificar-festivo>
+      
+      <!-- Mostrar loading mientras se verifica -->
+      <div *ngIf="loadingVerificacion" class="loading-container">
+        <mat-spinner diameter="40"></mat-spinner>
+        <p>Verificando fecha...</p>
+      </div>
+      
+      <!-- Mostrar resultado de verificación -->
+      <div *ngIf="verificacionRealizada && !loadingVerificacion" class="result-container">
+        <mat-card [ngClass]="esFestivo ? 'festivo-result' : 'no-festivo-result'">
+          <div class="result-content">
+            <div class="result-icon">
+              <mat-icon [ngClass]="esFestivo ? 'festivo-icon' : 'no-festivo-icon'">
+                {{ esFestivo ? 'celebration' : 'event_busy' }}
+              </mat-icon>
+            </div>
+            <div class="result-text">
+              <h3>{{ esFestivo ? '¡Es un día festivo!' : 'No es día festivo' }}</h3>
+              <p>{{ esFestivo ? 'La fecha seleccionada corresponde a un día festivo en Colombia' : 'La fecha seleccionada es un día laboral normal' }}</p>
+            </div>
+          </div>
+        </mat-card>
+        <div class="button-container" style="margin-top: 1rem;">
+          <button mat-stroked-button (click)="limpiarVerificacion()" class="clear-button">
+            <mat-icon>clear</mat-icon>
+            Limpiar resultado
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="section-card">
+    <mat-card-header>
+      <mat-card-title class="section-title">
+        <mat-icon>list</mat-icon>
+        Obtener festivos por año
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <app-listar-festivos (obtener)="obtenerFestivos($event)"></app-listar-festivos>
+      
+      <!-- Mostrar loading mientras se cargan los festivos -->
+      <div *ngIf="loadingTable" class="loading-container">
+        <mat-spinner diameter="40"></mat-spinner>
+        <p>Cargando festivos...</p>
+      </div>
+      
+      <!-- Mostrar tabla de festivos -->
+      <div *ngIf="!loadingTable && festivos.length > 0" class="table-container">
+        <ngx-datatable
+          class="festivos-table"
+          [columns]="columns"
+          [rows]="festivos"
+          [columnMode]="ColumnMode.flex"
+          [headerHeight]="50"
+          [rowHeight]="50"
+          [limit]="10"
+          [footerHeight]="50"
+          [externalPaging]="false"
+          [sortType]="SortType.single">
+          
+          <!-- Template para la columna de festivo -->
+          <ngx-datatable-column name="festivo" prop="festivo" [flexGrow]="2">
+            <ng-template let-value="value" ngx-datatable-cell-template>
+              <div class="festivo-cell">
+                <mat-icon class="festivo-icon-small">celebration</mat-icon>
+                <span>{{ value }}</span>
+              </div>
+            </ng-template>
+          </ngx-datatable-column>
+          
+          <!-- Template para la columna de fecha -->
+          <ngx-datatable-column name="fecha" prop="fecha" [flexGrow]="1">
+            <ng-template let-value="value" ngx-datatable-cell-template>
+              <div class="fecha-cell">
+                <mat-icon class="date-icon">event</mat-icon>
+                <span>{{ value }}</span>
+              </div>
+            </ng-template>
+          </ngx-datatable-column>
+        </ngx-datatable>
+      </div>
+      
+      <!-- Mostrar mensaje cuando no hay datos -->
+      <div *ngIf="!loadingTable && festivos.length === 0 && (listarForm.get('año')?.value !== currentYear || formSubmitted)" class="no-data">
+        <mat-icon class="no-data-icon">event_note</mat-icon>
+        <p>No se encontraron festivos para el año especificado</p>
+        <p>Intenta con otro año</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

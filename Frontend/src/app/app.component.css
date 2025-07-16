@@ -1,0 +1,353 @@
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+.navbar-icon {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+  color: #ffd700;
+}
+
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: white;
+}
+
+/* Contenedor principal */
+.main-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: calc(100vh - 64px);
+  padding: 2rem;
+}
+
+/* Cards de sección */
+.section-card {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e3c72;
+}
+
+.section-title mat-icon {
+  color: #2a5298;
+}
+
+/* Formularios */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.date-field {
+  width: 100%;
+  max-width: 400px;
+}
+
+.year-field {
+  width: 100%;
+  max-width: 300px;
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+
+.action-button {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  min-width: 200px;
+  flex: 0 0 auto;
+}
+
+.clear-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  min-width: 120px;
+  flex: 0 0 auto;
+}
+
+/* Resultados de verificación */
+.result-container {
+  margin-top: 2rem;
+  animation: slideIn 0.3s ease-out;
+}
+
+.festivo-result {
+  background: linear-gradient(135deg, #4caf50, #8bc34a);
+  color: white;
+}
+
+.no-festivo-result {
+  background: linear-gradient(135deg, #607d8b, #90a4ae);
+  color: white;
+}
+
+.result-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.result-icon {
+  flex-shrink: 0;
+}
+
+.festivo-icon {
+  font-size: 3rem;
+  width: 3rem;
+  height: 3rem;
+  color: #ffd700;
+}
+
+.no-festivo-icon {
+  font-size: 3rem;
+  width: 3rem;
+  height: 3rem;
+  color: #ffffff;
+}
+
+.result-text h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.result-text p {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Tabla de festivos */
+.table-container {
+  margin-top: 2rem;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem;
+  color: #666;
+}
+
+.festivos-table {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  background: white;
+}
+
+.festivo-cell,
+.fecha-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.festivo-icon-small {
+  color: #ff6b35;
+  font-size: 1.2rem;
+}
+
+.date-icon {
+  color: #2196f3;
+  font-size: 1.2rem;
+}
+
+/* Sin datos */
+.no-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem;
+  color: #666;
+  text-align: center;
+}
+
+.no-data-icon {
+  font-size: 3rem;
+  width: 3rem;
+  height: 3rem;
+  opacity: 0.5;
+  color: #2196f3;
+}
+
+.no-data p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Animaciones */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 1rem;
+  }
+  
+  .section-card {
+    margin: 0 0 1rem 0;
+    border-radius: 12px;
+  }
+  
+  .navbar-title {
+    font-size: 1.2rem;
+  }
+  
+  .form {
+    gap: 1rem;
+  }
+  
+  .date-field,
+  .year-field {
+    max-width: 100%;
+  }
+  
+  .button-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  
+  .action-button {
+    width: 100%;
+    min-width: unset;
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .clear-button {
+    width: 100%;
+    min-width: unset;
+    padding: 0.875rem;
+  }
+  
+  .result-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .result-icon {
+    align-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    padding: 0.5rem;
+  }
+  
+  .section-card {
+    border-radius: 8px;
+  }
+  
+  .navbar {
+    padding: 0 1rem;
+  }
+  
+  .navbar-title {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.1rem;
+  }
+  
+  .action-button {
+    padding: 1.25rem;
+    font-size: 1rem;
+  }
+  
+  .clear-button {
+    padding: 1rem;
+  }
+}
+
+/* Mejoras para Material Design */
+::ng-deep .mat-mdc-form-field {
+  font-family: 'Roboto', sans-serif;
+}
+
+::ng-deep .mat-mdc-card-header {
+  padding-bottom: 0;
+}
+
+::ng-deep .success-snackbar {
+  background-color: #4caf50 !important;
+  color: white !important;
+}
+
+::ng-deep .error-snackbar {
+  background-color: #f44336 !important;
+  color: white !important;
+}
+
+::ng-deep .info-snackbar {
+  background-color: #2196f3 !important;
+  color: white !important;
+}
+
+/* Estilos para ngx-datatable */
+::ng-deep .ngx-datatable .datatable-header {
+  background-color: #1e3c72;
+  color: white;
+  font-weight: 500;
+}
+
+::ng-deep .ngx-datatable .datatable-body {
+  background-color: white;
+}
+
+::ng-deep .ngx-datatable .datatable-row-even {
+  background-color: #f8f9fa;
+}
+
+::ng-deep .ngx-datatable .datatable-row-odd {
+  background-color: white;
+}
+
+::ng-deep .ngx-datatable .datatable-row-wrapper:hover {
+  background-color: #e3f2fd !important;
+}

@@ -1,0 +1,9 @@
+.form {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.button-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}

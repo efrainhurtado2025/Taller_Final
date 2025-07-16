@@ -1,0 +1,19 @@
+<form [formGroup]="verificarForm" (ngSubmit)="onSubmit()" class="form">
+  <div class="form-row">
+    <mat-form-field appearance="outline" class="date-field">
+      <mat-label>Selecciona una fecha</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="fecha" readonly>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="verificarForm.get('fecha')?.hasError('required')">
+        La fecha es requerida
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="button-container">
+    <button mat-raised-button color="primary" type="submit" [disabled]="verificarForm.invalid" class="action-button">
+      <mat-icon>search</mat-icon>
+      Validar fecha
+    </button>
+  </div>
+</form>
