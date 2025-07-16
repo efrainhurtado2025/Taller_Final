@@ -1,7 +1,6 @@
 
 ---
 
-```
 # 🚀 Taller Final - Aplicación Web con Spring Boot y Angular
 
 Este proyecto es el resultado final del curso de **Técnicas de Programación**, y consiste en una aplicación para consultar los festivos de cada año desarrollada con:
@@ -12,6 +11,7 @@ Este proyecto es el resultado final del curso de **Técnicas de Programación**,
 La estructura del proyecto está organizada en carpetas separadas para el cliente (frontend) y el servidor (backend), cada una con su propio README.
 
 ---
+
 
 ## 🧱 Estructura del Proyecto
 
@@ -84,7 +84,7 @@ La aplicación se podrá visualizar en: `http://localhost:4200`
 
 **\[Efraín Hurtado]**
 Estudiante de la UdeA
-📧 Contacto: \[[tu.email@example.com](mailto:tu.email@example.com)]
+📧 Contacto: \[[efrain.hurtado@udea.edu.co](mailto:efrain.hurtado@udea.edu.co)]
 
 ---
 
