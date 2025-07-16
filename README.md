@@ -82,8 +82,8 @@ La aplicación se podrá visualizar en: `http://localhost:4200`
 
 ## 👨‍💻 Autor
 
-**\[Tu Nombre Aquí]**
-Estudiante de Técnicas de Programación
+**\[Efraín Hurtado]**
+Estudiante de la UdeA
 📧 Contacto: \[[tu.email@example.com](mailto:tu.email@example.com)]
 
 ---
