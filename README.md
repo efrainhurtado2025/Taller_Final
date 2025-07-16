@@ -1,7 +1,7 @@
 
 ---
 
-```markdown
+```
 # 🚀 Taller Final - Aplicación Web con Spring Boot y Angular
 
 Este proyecto es el resultado final del curso de **Técnicas de Programación**, y consiste en una aplicación para consultar los festivos de cada año desarrollada con:
@@ -72,13 +72,11 @@ La aplicación se podrá visualizar en: `http://localhost:4200`
 
 ## 📷 Capturas de Pantalla
 
-*Añade aquí imágenes del frontend funcionando o gifs si deseas mostrar la experiencia de usuario.*
+*Vistas de la aplicación*
 
-Puedes incluir imágenes así:
+![Funcionalidad validad festivo](./diafestivocheck.jpg)
+![Funcionalidad Listar festivos](./listadofestivos.jpg)
 
-```markdown
-![Nombre descriptivo](ruta/a/la/imagen.png)
-```
 
 ---
 
